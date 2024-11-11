@@ -1,0 +1,26 @@
+{
+  "VpcName": "code-review-platform-vpc-dev",
+  "CidrBlock": "10.0.0.0/16",
+  "PrivateSubnets": [
+    {
+      "Name": "code-review-platform-vpc-dev-private-1",
+      "CidrBlock": "10.0.1.0/24",
+      "AZ": "us-east-1a"
+    },
+    {
+      "Name": "code-review-platform-vpc-dev-private-2",
+      "CidrBlock": "10.0.2.0/24",
+      "AZ": "us-east-1b"
+    }
+  ],
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "code-review-platform"
+    },
+    {
+      "Key": "Environment",
+      "Value": "dev"
+    }
+  ]
+}

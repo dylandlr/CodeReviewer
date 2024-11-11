@@ -1,5 +1,50 @@
 # CodeReviewer
+
 AWS-powered Code Review Application
+
+# AI-Powered Code Review Platform
+
+## Overview
+
+This project implements an AI-powered code review platform using AWS services including CodeCommit, CodeGuru, and CodePipeline.
+
+## Prerequisites
+
+- AWS Account
+- VS Code
+- Git
+- AWS CLI
+- PowerShell
+
+## Setup
+
+1. Install required tools:
+
+   - AWS CLI
+   - Git
+   - VS Code
+
+2. Configure AWS CLI with your credentials
+
+3. Run the infrastructure setup scripts
+
+## Project Structure
+
+- `.vscode/` - VS Code settings
+- `infrastructure/` - AWS infrastructure setup
+  - `configs/` - Configuration files
+  - `scripts/` - Setup scripts
+- `src/` - Source code
+- `tests/` - Test files
+- `docs/` - Documentation
+
+## Configuration
+
+See `.env` file for environment-specific configuration.
+
+## Security
+
+All security-sensitive information should be managed through AWS Secrets Manager.
 
 # AWS Environment Implementation Guide
 
@@ -167,23 +212,27 @@ aws ec2 authorize-security-group-ingress \
 ## Verification Steps
 
 1. VPC Setup Verification:
+
 ```bash
 aws ec2 describe-vpcs --vpc-ids <vpc-id>
 aws ec2 describe-vpc-endpoints --filters Name=vpc-id,Values=<vpc-id>
 ```
 
 2. Repository Verification:
+
 ```bash
 aws codecommit get-repository --repository-name code-review-repo
 ```
 
 3. CodeGuru Verification:
+
 ```bash
 aws codeguru-reviewer list-repository-associations
 aws codeguru-profiler list-profiling-groups
 ```
 
 4. Pipeline Verification:
+
 ```bash
 aws codepipeline get-pipeline --name code-review-pipeline
 ```
@@ -196,6 +245,7 @@ aws codepipeline get-pipeline --name code-review-pipeline
 4. Keep track of created resource ARNs for IAM policy configuration
 
 Next steps will involve:
+
 - IAM role and policy creation
 - Detailed security group configurations
 - CodeGuru reviewer configuration

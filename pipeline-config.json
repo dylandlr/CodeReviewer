@@ -1,0 +1,44 @@
+{
+  "pipeline": {
+    "name": "code-review-pipeline",
+    "roleArn": "<pipeline-role-arn>",
+    "artifactStore": {
+      "type": "S3",
+      "location": "<artifact-bucket-name>"
+    },
+    "stages": [
+      {
+        "name": "Source",
+        "actions": [
+          {
+            "name": "Source",
+            "actionTypeId": {
+              "category": "Source",
+              "owner": "AWS",
+              "provider": "CodeCommit",
+              "version": "1"
+            },
+            "configuration": {
+              "RepositoryName": "code-review-repo",
+              "BranchName": "main"
+            }
+          }
+        ]
+      },
+      {
+        "name": "CodeReview",
+        "actions": [
+          {
+            "name": "CodeGuruReview",
+            "actionTypeId": {
+              "category": "Test",
+              "owner": "AWS",
+              "provider": "CodeGuru-Reviewer",
+              "version": "1"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

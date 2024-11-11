@@ -1,0 +1,28 @@
+codereviewer/
+│
+├── .vscode/
+│   └── settings.json
+│
+├── infrastructure/
+│   ├── scripts/
+│   │   ├── setup-env.ps1
+│   │   ├── vpc-setup.ps1
+│   │   └── cleanup-network.ps1
+│   │
+│   └── configs/
+│       ├── vpc-config.json
+│       ├── codecommit-endpoint-policy.json
+│       └── codeguru-endpoint-policy.json
+│
+├── src/
+│   └── (future application code)
+│
+├── tests/
+│   └── (future test files)
+│
+├── docs/
+│   └── (future documentation)
+│
+├── .gitignore
+├── README.md
+└── .env
